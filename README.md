@@ -27,11 +27,18 @@ npm run dev
   orders (search/filter/status update/edit pickup time & price/delete),
   and settings (business name, WhatsApp/call numbers, address, hours, and
   full package editing — name/description/price/features per language).
+- **Snapchat tracking** (`src/lib/tracking.ts`): Snap Pixel fires `PAGE_VIEW`
+  on load, `VIEW_CONTENT` when a package is selected, and `SIGN_UP` when a
+  booking is confirmed (the real conversion event here). UTM params and
+  Snapchat's `?ScCid=` click id are captured on landing and stored on the
+  order, so the admin Orders table shows a "Snapchat" source badge per
+  order and the order drawer shows full UTM attribution.
 
 ## Environment variables
 
 | Variable | Where to get it | Secret? |
 |---|---|---|
+| `NEXT_PUBLIC_SNAP_PIXEL_ID` | Already defaults to the Crystal Clean pixel — only set to switch pixels | No |
 | `SUPABASE_URL` | Supabase dashboard → Project Settings → API | No |
 | `SUPABASE_ANON_KEY` | Supabase dashboard → Project Settings → API (anon/publishable key) | No (RLS-restricted) |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase dashboard → Project Settings → API (service_role / "Secret key") | **Yes — server only** |

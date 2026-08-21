@@ -5,6 +5,7 @@ import { useLanguage } from '@/lib/LanguageProvider';
 import { useSettings } from '@/lib/SettingsProvider';
 import { useBooking } from '@/lib/BookingProvider';
 import { CONTENT } from '@/lib/content';
+import { trackViewContent } from '@/lib/tracking';
 
 export function PackagesSection() {
   const { lang } = useLanguage();
@@ -64,7 +65,10 @@ export function PackagesSection() {
 
               <div className="p-6 sm:p-7 pt-0">
                 <button
-                  onClick={() => openBooking(pkg.id)}
+                  onClick={() => {
+                    trackViewContent(pkg.id);
+                    openBooking(pkg.id);
+                  }}
                   className="w-full py-3.5 px-4 rounded-2xl font-extrabold text-sm bg-[#0B2559] hover:bg-[#07193d] text-white transition-all hover:shadow-md"
                 >
                   {t.packages.selectButton}

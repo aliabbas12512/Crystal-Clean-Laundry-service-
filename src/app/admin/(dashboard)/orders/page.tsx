@@ -87,16 +87,17 @@ export default function OrdersPage() {
                 <th className="text-left px-4 py-3">Customer</th>
                 <th className="text-left px-4 py-3">Package</th>
                 <th className="text-left px-4 py-3">Pickup</th>
+                <th className="text-left px-4 py-3">Source</th>
                 <th className="text-left px-4 py-3">Status</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {loading ? (
-                <tr><td colSpan={5} className="px-4 py-8 text-center text-slate-400">Loading…</td></tr>
+                <tr><td colSpan={6} className="px-4 py-8 text-center text-slate-400">Loading…</td></tr>
               ) : error ? (
-                <tr><td colSpan={5} className="px-4 py-8 text-center text-red-600 font-semibold">Failed to load orders. Please try again.</td></tr>
+                <tr><td colSpan={6} className="px-4 py-8 text-center text-red-600 font-semibold">Failed to load orders. Please try again.</td></tr>
               ) : orders.length === 0 ? (
-                <tr><td colSpan={5} className="px-4 py-8 text-center text-slate-400">No orders found</td></tr>
+                <tr><td colSpan={6} className="px-4 py-8 text-center text-slate-400">No orders found</td></tr>
               ) : (
                 orders.map((order) => (
                   <tr key={order.id} onClick={() => setSelected(order)} className="hover:bg-slate-50/70 cursor-pointer">
@@ -107,6 +108,9 @@ export default function OrdersPage() {
                     </td>
                     <td className="px-4 py-3 text-slate-600">{order.package_name} <span className="text-slate-400">({order.price} SAR)</span></td>
                     <td className="px-4 py-3 text-slate-500 whitespace-nowrap">{order.pickup_date} · {order.pickup_time}</td>
+                    <td className="px-4 py-3">
+                      <SourceBadge order={order} />
+                    </td>
                     <td className="px-4 py-3">
                       <span className={`text-xs font-bold rounded-lg px-2 py-1 ${STATUS_STYLES[order.status]}`}>{statusLabel(order.status)}</span>
                     </td>
@@ -134,4 +138,15 @@ export default function OrdersPage() {
       )}
     </div>
   );
+}
+
+function SourceBadge({ order }: { order: Order }) {
+  const isSnapchat = Boolean(order.sc_click_id) || (order.utm_source ?? '').toLowerCase().startsWith('snap');
+  if (isSnapchat) {
+    return <span className="text-xs font-bold rounded-lg px-2 py-1 bg-amber-100 text-amber-800">Snapchat</span>;
+  }
+  if (order.utm_source) {
+    return <span className="text-xs font-bold rounded-lg px-2 py-1 bg-slate-100 text-slate-600">{order.utm_source}</span>;
+  }
+  return <span className="text-xs text-slate-400">Direct</span>;
 }

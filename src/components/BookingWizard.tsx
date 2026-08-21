@@ -11,6 +11,7 @@ import { useBooking } from '@/lib/BookingProvider';
 import { CONTENT } from '@/lib/content';
 import { isValidSaudiMobile, whatsappLink, orderStatusInquiryMessage } from '@/lib/whatsapp';
 import { BookingFormData } from '@/lib/types';
+import { getAttribution, trackSignUp } from '@/lib/tracking';
 
 const EMPTY_FORM: BookingFormData = {
   customerName: '',
@@ -95,10 +96,12 @@ export function BookingWizard() {
           deliveryAddress: form.deliveryAddress,
           notes: form.notes,
           lang,
+          ...getAttribution(),
         }),
       });
       if (!res.ok) throw new Error('failed');
       const data = await res.json();
+      trackSignUp(data.orderId, selectedPackage.price);
       setResult({ orderId: data.orderId });
     } catch {
       setSubmitError(t.booking.errors.submitFailed);

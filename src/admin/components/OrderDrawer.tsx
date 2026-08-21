@@ -77,6 +77,16 @@ export function OrderDrawer({
             <Row label="Created" value={new Date(order.created_at).toLocaleString()} />
           </div>
 
+          {(order.utm_source || order.sc_click_id) && (
+            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 space-y-1.5 text-sm">
+              <p className="text-xs font-bold text-amber-700 uppercase mb-1">Ad Attribution</p>
+              {order.utm_source && <Row label="Source" value={order.utm_source} />}
+              {order.utm_medium && <Row label="Medium" value={order.utm_medium} />}
+              {order.utm_campaign && <Row label="Campaign" value={order.utm_campaign} />}
+              {order.sc_click_id && <Row label="Snap Click ID" value={order.sc_click_id} dir="ltr" />}
+            </div>
+          )}
+
           <div className="flex gap-2">
             <a
               href={whatsappLink(order.whatsapp_number, orderStatusInquiryMessage(order.order_id, order.lang))}

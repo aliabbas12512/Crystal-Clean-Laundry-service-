@@ -56,6 +56,12 @@ export async function POST(req: NextRequest) {
         delivery_address: clip(body.deliveryAddress, 300),
         notes: clip(body.notes, 1000),
         lang: body.lang === 'en' ? 'en' : 'ar',
+        utm_source: clip(body.utm_source, 150),
+        utm_medium: clip(body.utm_medium, 150),
+        utm_campaign: clip(body.utm_campaign, 150),
+        utm_term: clip(body.utm_term, 150),
+        utm_content: clip(body.utm_content, 150),
+        sc_click_id: clip(body.sc_click_id, 300),
       })
       .select('order_id, created_at')
       .single();
