@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     'Premium laundry pickup & delivery service in Dammam, Saudi Arabia. Book in under 2 minutes — no account needed. Free pickup & delivery, signature Oud fragrance finish.',
   robots: { index: true, follow: true },
   alternates: { canonical: '/' },
+  other: {
+    google: 'notranslate',
+  },
   openGraph: {
     type: 'website',
     siteName: 'Crystal Clean Laundry Service',
@@ -40,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="ar" dir="rtl" className={`${tajawal.variable} ${jakarta.variable} h-full antialiased`}>
+    <html lang="ar" dir="rtl" translate="no" className={`${tajawal.variable} ${jakarta.variable} h-full antialiased notranslate`}>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-800">{children}</body>
     </html>
   );
