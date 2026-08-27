@@ -6,6 +6,7 @@ import { useSettings } from '@/lib/SettingsProvider';
 import { useBooking } from '@/lib/BookingProvider';
 import { CONTENT } from '@/lib/content';
 import { whatsappLink, generalInquiryMessage } from '@/lib/whatsapp';
+import { trackContact } from '@/lib/tracking';
 
 export function WhatsAppFloating() {
   const { lang } = useLanguage();
@@ -19,6 +20,7 @@ export function WhatsAppFloating() {
         href={whatsappLink(settings.whatsappNumber, generalInquiryMessage(settings.businessName.en, lang))}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={trackContact}
         className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-black text-xs active:scale-95 transition-transform"
       >
         <MessageCircle className="w-4 h-4" />
@@ -26,6 +28,7 @@ export function WhatsAppFloating() {
       </a>
       <a
         href={`tel:${settings.callNumber}`}
+        onClick={trackContact}
         className="flex-1 flex items-center justify-center gap-1.5 py-3 px-2 rounded-xl bg-[#0284c7] text-white font-black text-xs active:scale-95 transition-transform"
       >
         <Phone className="w-4 h-4" />

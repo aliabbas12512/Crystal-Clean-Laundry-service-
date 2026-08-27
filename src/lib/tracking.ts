@@ -115,3 +115,9 @@ export function trackViewContent(packageId: string): void {
 export function trackSignUp(orderId: string, price: number): void {
   window.snaptr?.('track', 'SIGN_UP', { item_ids: [orderId], price, currency: 'SAR' });
 }
+
+// Fired on WhatsApp/Call clicks — the "I want to talk to you" intent signal,
+// distinct from SIGN_UP (a completed booking).
+export function trackContact(): void {
+  window.snaptr?.('track', 'CONTACT');
+}

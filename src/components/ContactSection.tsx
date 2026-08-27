@@ -5,6 +5,7 @@ import { useLanguage } from '@/lib/LanguageProvider';
 import { useSettings } from '@/lib/SettingsProvider';
 import { CONTENT } from '@/lib/content';
 import { whatsappLink, generalInquiryMessage } from '@/lib/whatsapp';
+import { trackContact } from '@/lib/tracking';
 
 export function ContactSection() {
   const { lang } = useLanguage();
@@ -18,8 +19,9 @@ export function ContactSection() {
       value: settings.whatsappNumber,
       href: whatsappLink(settings.whatsappNumber, generalInquiryMessage(settings.businessName.en, lang)),
       color: 'bg-emerald-500',
+      onClick: trackContact,
     },
-    { icon: Phone, label: t.contact.call, value: settings.callNumber, href: `tel:${settings.callNumber}`, color: 'bg-[#0B2559]' },
+    { icon: Phone, label: t.contact.call, value: settings.callNumber, href: `tel:${settings.callNumber}`, color: 'bg-[#0B2559]', onClick: trackContact },
     { icon: Mail, label: t.contact.email, value: settings.email, href: `mailto:${settings.email}`, color: 'bg-cyan-600' },
   ];
 
@@ -38,6 +40,7 @@ export function ContactSection() {
               href={card.href}
               target={card.href.startsWith('http') ? '_blank' : undefined}
               rel={card.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              onClick={card.onClick}
               className="group bg-slate-50/70 p-6 rounded-3xl border border-slate-200/80 hover:border-sky-300 hover:shadow-lg transition-all"
             >
               <div className={`w-12 h-12 rounded-2xl ${card.color} text-white flex items-center justify-center mb-4 group-hover:scale-105 transition-transform`}>

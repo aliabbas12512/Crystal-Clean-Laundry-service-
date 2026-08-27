@@ -8,6 +8,7 @@ import { useSettings } from '@/lib/SettingsProvider';
 import { useBooking } from '@/lib/BookingProvider';
 import { CONTENT } from '@/lib/content';
 import { whatsappLink, generalInquiryMessage } from '@/lib/whatsapp';
+import { trackContact } from '@/lib/tracking';
 
 export function Header() {
   const { lang, toggleLanguage } = useLanguage();
@@ -62,6 +63,7 @@ export function Header() {
 
           <a
             href={`tel:${settings.callNumber}`}
+            onClick={trackContact}
             className="hidden xl:inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-slate-700 hover:text-[#0B2559] bg-slate-100 hover:bg-slate-200 rounded-xl transition-all"
           >
             <Phone className="w-3.5 h-3.5 text-sky-600" />
@@ -72,6 +74,7 @@ export function Header() {
             href={whatsappLink(settings.whatsappNumber, generalInquiryMessage(settings.businessName.en, lang))}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackContact}
             className="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 rounded-xl shadow-sm shadow-emerald-500/20 transition-all"
           >
             <MessageCircle className="w-4 h-4" />

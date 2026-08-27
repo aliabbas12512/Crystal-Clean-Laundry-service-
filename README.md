@@ -28,11 +28,16 @@ npm run dev
   and settings (business name, WhatsApp/call numbers, address, hours, and
   full package editing — name/description/price/features per language).
 - **Snapchat tracking** (`src/lib/tracking.ts`): Snap Pixel fires `PAGE_VIEW`
-  on load, `VIEW_CONTENT` when a package is selected, and `SIGN_UP` when a
-  booking is confirmed (the real conversion event here). UTM params and
-  Snapchat's `?ScCid=` click id are captured on landing and stored on the
-  order, so the admin Orders table shows a "Snapchat" source badge per
-  order and the order drawer shows full UTM attribution.
+  on load, `VIEW_CONTENT` when a package is selected, `CONTACT` on every
+  WhatsApp/Call click, and `SIGN_UP` when a booking is confirmed (the real
+  conversion event here). UTM params and Snapchat's `?ScCid=` click id are
+  captured on landing and stored on the order, so the admin Orders table
+  shows a "Snapchat" source badge per order and the order drawer shows full
+  UTM attribution.
+- **Vercel Analytics + Speed Insights**: instrumented in `src/app/layout.tsx`
+  (`@vercel/analytics`, `@vercel/speed-insights`). Data only starts flowing
+  once both are toggled **on** in the Vercel dashboard (Project → Analytics
+  / Speed Insights) — the code alone doesn't enable them.
 
 ## Environment variables
 

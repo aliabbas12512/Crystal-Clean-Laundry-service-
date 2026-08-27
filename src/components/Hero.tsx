@@ -6,6 +6,7 @@ import { useSettings } from '@/lib/SettingsProvider';
 import { useBooking } from '@/lib/BookingProvider';
 import { CONTENT } from '@/lib/content';
 import { whatsappLink, generalInquiryMessage } from '@/lib/whatsapp';
+import { trackContact } from '@/lib/tracking';
 
 export function Hero() {
   const { lang } = useLanguage();
@@ -48,6 +49,7 @@ export function Hero() {
               href={whatsappLink(settings.whatsappNumber, generalInquiryMessage(settings.businessName.en, lang))}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackContact}
               className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-extrabold text-base shadow-lg shadow-emerald-500/25 transition-all hover:scale-[1.02] active:scale-98"
             >
               <MessageCircle className="w-5 h-5" />
@@ -55,6 +57,7 @@ export function Hero() {
             </a>
             <a
               href={`tel:${settings.callNumber}`}
+              onClick={trackContact}
               className="inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-2xl bg-white hover:bg-sky-50 text-[#0B2559] font-extrabold text-base border border-sky-200 transition-all hover:scale-[1.02] active:scale-98"
             >
               <Phone className="w-5 h-5 text-sky-600" />

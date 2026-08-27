@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Tajawal, Plus_Jakarta_Sans } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 const tajawal = Tajawal({
@@ -44,7 +46,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="ar" dir="rtl" translate="no" className={`${tajawal.variable} ${jakarta.variable} h-full antialiased notranslate`}>
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-800">{children}</body>
+      <body className="min-h-full flex flex-col bg-slate-50 text-slate-800">
+        {children}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

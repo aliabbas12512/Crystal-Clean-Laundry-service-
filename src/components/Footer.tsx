@@ -1,9 +1,12 @@
+'use client';
+
 import { Phone, MessageCircle, Mail } from 'lucide-react';
 import { BrandLogo } from './BrandLogo';
 import { CONTENT } from '@/lib/content';
 import { Language } from '@/lib/types';
 import { BusinessSettings } from '@/lib/types';
 import { whatsappLink, generalInquiryMessage } from '@/lib/whatsapp';
+import { trackContact } from '@/lib/tracking';
 
 export function Footer({ lang, settings }: { lang: Language; settings: BusinessSettings }) {
   const t = CONTENT[lang];
@@ -20,6 +23,7 @@ export function Footer({ lang, settings }: { lang: Language; settings: BusinessS
               href={whatsappLink(settings.whatsappNumber, generalInquiryMessage(settings.businessName.en, lang))}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackContact}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-emerald-950/60 hover:text-emerald-400 border border-slate-700 transition-colors"
             >
               <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
@@ -27,6 +31,7 @@ export function Footer({ lang, settings }: { lang: Language; settings: BusinessS
             </a>
             <a
               href={`tel:${settings.callNumber}`}
+              onClick={trackContact}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-sky-950/60 hover:text-sky-400 border border-slate-700 transition-colors"
             >
               <Phone className="w-3.5 h-3.5 text-sky-400" />
