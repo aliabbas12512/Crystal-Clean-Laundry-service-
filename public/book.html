@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>احجز استلام غسيلك | كريستال كلين للغسيل</title>
+<meta name="description" content="باقات غسيل وكوي شهرية مع استلام وتوصيل مجاني في الدمام والخبر والظهران. اطلب باقتك الآن عبر واتساب.">
+<meta name="theme-color" content="#0B2A5B">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Readex+Pro:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --navy:#0B2A5B; --navy-2:#1A3D73; --aqua:#1E8FC7; --aqua-l:#7FD3F7;
+    --gold:#B8892E; --gold-l:#F2D79B; --green:#128C4A; --green-d:#0E7A40;
+    --bg:#EEF6FC; --card:#FFFFFF; --line:#CFE3F3; --muted:#3D5A80;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:'Readex Pro',system-ui,sans-serif;background:var(--bg);color:var(--navy);-webkit-font-smoothing:antialiased;padding-bottom:96px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px}
+
+  header.hero{background:var(--navy);color:#fff;padding:22px 0 30px;border-radius:0 0 28px 28px}
+  .brand{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-text{direction:ltr;text-align:left}
+  .logo-text b{display:block;font-family:'Cinzel',serif;font-size:19px;letter-spacing:1.5px;line-height:1}
+  .logo-text small{display:block;font-size:10px;letter-spacing:6px;color:var(--aqua-l);margin-top:3px}
+  .oud{border:1.5px solid var(--gold);color:var(--gold-l);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:600;white-space:nowrap}
+  h1{font-size:30px;line-height:1.3;margin:22px 0 10px;font-weight:700}
+  .sub{font-size:16px;line-height:1.7;color:#D6E9F7;margin:0}
+  .sub strong{color:#fff}
+  .sub em{font-style:normal;color:#8EE6A8;font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;font-size:13px}
+
+  .discount{margin:-18px 0 0;background:var(--green);color:#fff;border-radius:20px;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 10px 24px rgba(18,140,74,.25);position:relative}
+  .discount b{font-size:20px;display:block}
+  .discount span{font-size:13px;color:#E3F7EA}
+
+  h2{font-size:22px;margin:30px 0 4px}
+  .hint{margin:0 0 16px;color:var(--muted);font-size:14px}
+
+  .pkgs{display:flex;flex-direction:column;gap:14px}
+  .pkg{display:block;background:var(--card);border:2px solid var(--line);border-radius:22px;padding:18px;position:relative;transition:transform .15s ease, box-shadow .15s ease;cursor:pointer}
+  .pkg:active{transform:scale(.985)}
+  .pkg:hover{box-shadow:0 10px 26px rgba(11,42,91,.12)}
+  .pkg.best{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .badge{position:absolute;top:-12px;left:18px;background:var(--gold);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px}
+  .pkg-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+  .pkg-name{font-size:18px;font-weight:700;color:var(--aqua)}
+  .pkg.best .pkg-name{color:var(--aqua-l)}
+  .price{display:flex;align-items:baseline;gap:4px;direction:rtl}
+  .price b{font-size:38px;line-height:1}
+  .price span{font-size:14px;font-weight:600}
+  .per{font-size:12px;color:var(--muted);text-align:left}
+  .pkg.best .per{color:#D6E9F7}
+  ul.feat{list-style:none;padding:0;margin:14px 0 16px;display:grid;gap:8px;font-size:15px}
+  ul.feat li{display:flex;align-items:center;gap:8px}
+  ul.feat li::before{content:"✓";display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#E3F7EA;color:var(--green);font-size:12px;font-weight:700;flex:none}
+  .pkg.best ul.feat li::before{background:rgba(142,230,168,.18);color:#8EE6A8}
+  .wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;border-radius:14px;padding:13px;font-weight:700;font-size:16px}
+  .pkg.best .wa-btn{background:#25D366;color:#063B1E}
+  .wa-btn svg{width:20px;height:20px}
+
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 10px;text-align:center;font-size:13px;line-height:1.5}
+  .step b{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;margin:0 auto 8px;font-size:14px}
+
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .why div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;font-size:14px;font-weight:500}
+
+  footer{margin-top:30px;background:var(--navy);color:#D6E9F7;padding:22px 0;font-size:13px;text-align:center;line-height:1.9}
+  footer a{color:#fff;font-weight:600}
+
+  .sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(238,246,252,.94);backdrop-filter:blur(8px);border-top:1px solid var(--line);z-index:10}
+  .sticky .row{max-width:560px;margin:0 auto;display:flex;gap:10px}
+  .sticky .wa{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#063B1E;font-weight:700;border-radius:14px;padding:14px;font-size:16px}
+  .sticky .call{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--navy);color:#fff;font-weight:600;border-radius:14px;padding:14px 16px;font-size:15px}
+  .sticky svg{width:20px;height:20px}
+
+  .pkg{width:100%;text-align:right;font:inherit;color:inherit}
+  .pkg.sel{border-color:var(--green);box-shadow:0 0 0 3px rgba(18,140,74,.18)}
+  .pkg.best.sel{box-shadow:0 0 0 3px rgba(37,211,102,.45)}
+  .pick{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--navy);color:#fff;border-radius:14px;padding:13px;font-weight:700;font-size:16px}
+  .pkg.best .pick{background:#fff;color:var(--navy)}
+  .pkg.sel .pick{background:var(--green);color:#fff}
+  form.book{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:18px;display:grid;gap:12px;margin-top:6px}
+  form.book label{display:grid;gap:6px;font-size:14px;font-weight:600}
+  form.book input,form.book select,form.book textarea{font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;padding:12px;background:#F8FBFE;color:var(--navy);width:100%}
+  form.book input:focus,form.book select:focus,form.book textarea:focus{outline:none;border-color:var(--aqua)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .chosen{background:#EEF6FC;border-radius:12px;padding:10px 12px;font-size:14px}
+  .chosen b{color:var(--green)}
+  .err{color:#B42318;font-size:14px;min-height:1em}
+  .submit{border:0;cursor:pointer;background:var(--green);color:#fff;font:inherit;font-weight:700;font-size:17px;border-radius:14px;padding:15px}
+  .submit[disabled]{opacity:.6}
+  .done{display:none;background:var(--card);border:2px solid var(--green);border-radius:22px;padding:22px;text-align:center;margin-top:6px}
+  .done h3{margin:0 0 8px;font-size:22px;color:var(--green)}
+  .done .oid{font-size:22px;font-weight:700;direction:ltr;margin:8px 0 14px}
+  .sticky .wa{border:0;cursor:pointer;font:inherit;font-weight:700}
+</style>
+
+<!-- Snap Pixel (same pixel as the main site) -->
+<script>
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function(){a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};a.queue=[];var s='script';var r=t.createElement(s);r.async=!0;r.src=n;var u=t.getElementsByTagName(s)[0];u.parentNode.insertBefore(r,u);})(window,document,'https://sc-static.net/scevent.min.js');
+snaptr('init','8b94037b-81c2-46e4-b420-56411c17d9e8');
+snaptr('track','PAGE_VIEW');
+</script>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">
+        <svg width="40" height="40" viewBox="0 0 84 84" aria-hidden="true"><rect x="10" y="6" width="64" height="72" rx="10" fill="none" stroke="#fff" stroke-width="4"/><line x1="10" y1="22" x2="74" y2="22" stroke="#fff" stroke-width="4"/><circle cx="22" cy="14" r="2.5" fill="#7FD3F7"/><circle cx="32" cy="14" r="2.5" fill="#7FD3F7"/><circle cx="42" cy="50" r="19" fill="none" stroke="#7FD3F7" stroke-width="4"/><path d="M27 53 Q35 45 42 53 T57 53" fill="none" stroke="#7FD3F7" stroke-width="4" stroke-linecap="round"/></svg>
+        <div class="logo-text"><b>CRYSTAL CLEAN</b><small>LAUNDRY</small></div>
+      </div>
+      <div class="oud">مع عطر العود الفاخر</div>
+    </div>
+    <h1>وفّر وقتك… غسيلك يجيك لين باب بيتك</h1>
+    <p class="sub">باقات غسيل وكوي <strong>شهرية</strong> مع استلام وتوصيل <em>مجاني</em> في الدمام والخبر والظهران</p>
+    <div class="chips"><span class="chip">غسيل</span><span class="chip">كوي</span><span class="chip">طي وترتيب</span><span class="chip">استلام وتوصيل</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="discount">
+    <div><b>خصم 20% على أول باقة</b><span>للعملاء الجدد – احجز استلامك الآن</span></div>
+    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+  </div>
+
+  <h2>1. اختر باقتك</h2>
+  <p class="hint">اضغط على الباقة اللي تناسبك</p>
+
+  <div class="pkgs">
+    <button type="button" class="pkg" data-id="basic" data-name="الباقة الأساسية" data-price="300">
+      <div class="pkg-top">
+        <div class="pkg-name">الباقة الأساسية</div>
+        <div><div class="price"><b>300</b><span>ريال</span></div><div class="per">شهرياً</div></div>
+      </div>
+      <ul class="feat"><li>40 – 50 قطعة</li><li>استلامين في الشهر</li><li>غسيل + كوي + طي</li></ul>
+      <span class="pick">اختر هذه الباقة</span>
+    </button>
+
+    <button type="button" class="pkg" data-id="standard" data-name="الباقة المتوسطة" data-price="500">
+      <div class="pkg-top">
+        <div class="pkg-name">الباقة المتوسطة</div>
+        <div><div class="price"><b>500</b><span>ريال</span></div><div class="per">شهرياً</div></div>
+      </div>
+      <ul class="feat"><li>80 – 100 قطعة</li><li>4 استلامات في الشهر</li><li>غسيل + كوي + طي</li></ul>
+      <span class="pick">اختر هذه الباقة</span>
+    </button>
+
+    <button type="button" class="pkg best" data-id="premium" data-name="الباقة المميزة" data-price="800">
+      <span class="badge">أفضل قيمة</span>
+      <div class="pkg-top">
+        <div class="pkg-name">الباقة المميزة</div>
+        <div><div class="price"><b>800</b><span>ريال</span></div><div class="per">شهرياً</div></div>
+      </div>
+      <ul class="feat"><li>180 – 200 قطعة</li><li>4 استلامات في الشهر</li><li>غسيل + كوي + طي + عطر العود</li></ul>
+      <span class="pick">اختر هذه الباقة</span>
+    </button>
+  </div>
+
+  <h2 id="form-title">2. احجز موعد الاستلام</h2>
+  <p class="hint">عبّي بياناتك ونتواصل معك لتأكيد الموعد</p>
+
+  <form class="book" id="book" novalidate>
+    <div class="chosen" id="chosen">الباقة المختارة: <b>لم تختر بعد</b></div>
+    <label>الاسم<input name="customerName" autocomplete="name" required></label>
+    <label>رقم الجوال (واتساب)<input name="whatsappNumber" inputmode="tel" placeholder="05XXXXXXXX" dir="ltr" required></label>
+    <div class="row2">
+      <label>المدينة<select name="city" required><option value="">اختر</option><option>الخبر</option><option>الدمام</option><option>الظهران</option></select></label>
+      <label>الحي<input name="district" placeholder="مثال: العليا" required></label>
+    </div>
+    <label>العنوان / رقم المبنى<input name="pickupAddress" autocomplete="street-address" required></label>
+    <div class="row2">
+      <label>تاريخ الاستلام<input type="date" name="pickupDate" required></label>
+      <label>الوقت<select name="pickupTime" required><option value="">اختر</option><option>09:00 - 11:00</option><option>11:00 - 13:00</option><option>13:00 - 15:00</option><option>15:00 - 17:00</option><option>17:00 - 19:00</option><option>19:00 - 21:00</option></select></label>
+    </div>
+    <label>ملاحظات (اختياري)<textarea name="notes" rows="2"></textarea></label>
+    <div class="err" id="err" role="alert"></div>
+    <button class="submit" type="submit" id="submit">احجز الاستلام الآن</button>
+  </form>
+
+  <div class="done" id="done">
+    <h3>تم استلام طلبك ✓</h3>
+    <div>رقم طلبك</div>
+    <div class="oid" id="oid"></div>
+    <p class="hint" style="margin:0">بنتواصل معك قريباً لتأكيد موعد الاستلام. شكراً لاختيارك كريستال كلين.</p>
+  </div>
+
+  <h2>كيف تشتغل الخدمة؟</h2>
+  <div class="how">
+    <div class="step"><b>1</b>اختر باقتك واحجز موعدك</div>
+    <div class="step"><b>2</b>نستلم الغسيل من بيتك</div>
+    <div class="step"><b>3</b>نرجعه نظيف ومكوي</div>
+  </div>
+
+  <h2>ليش كريستال كلين؟</h2>
+  <div class="why">
+    <div>استلام وتوصيل مجاني</div>
+    <div>مواعيد ثابتة</div>
+    <div>عطر العود الفاخر</div>
+    <div>عناية بكل قطعة</div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    كريستال كلين للغسيل – الدمام · الخبر · الظهران<br>
+    للاستفسار اتصل: <a href="tel:+966572065269" dir="ltr">0572065269</a>
+  </div>
+</footer>
+
+<div class="sticky">
+  <div class="row">
+    <button type="button" class="wa" id="goBook">احجز الاستلام الآن</button>
+    <a class="call" href="tel:+966572065269">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+      اتصال
+    </a>
+  </div>
+</div>
+
+<script>
+  var chosen = null;
+  var qs = new URLSearchParams(location.search);
+  function snap(ev, data){ try { if (window.snaptr) snaptr('track', ev, data || {}); } catch (e) {} }
+  var form = document.getElementById('book');
+  function scrollToForm(){ document.getElementById('form-title').scrollIntoView({behavior:'smooth', block:'start'}); }
+  document.querySelectorAll('.pkg').forEach(function(el){
+    el.addEventListener('click', function(){
+      document.querySelectorAll('.pkg').forEach(function(p){ p.classList.remove('sel'); p.querySelector('.pick').textContent = 'اختر هذه الباقة'; });
+      el.classList.add('sel'); el.querySelector('.pick').textContent = 'تم الاختيار ✓';
+      chosen = { id: el.dataset.id, name: el.dataset.name, price: Number(el.dataset.price) };
+      document.getElementById('chosen').innerHTML = 'الباقة المختارة: <b>' + chosen.name + ' – ' + chosen.price + ' ريال</b>';
+      snap('VIEW_CONTENT', { item_ids: [chosen.id], price: chosen.price, currency: 'SAR' });
+      setTimeout(scrollToForm, 150);
+    });
+  });
+  document.getElementById('goBook').addEventListener('click', function(){
+    if (!chosen) document.querySelector('.pkgs').scrollIntoView({behavior:'smooth', block:'start'}); else scrollToForm();
+  });
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){ el.addEventListener('click', function(){ snap('CONTACT', { item_category: 'call' }); }); });
+  var d = form.pickupDate; var t = new Date(); d.min = t.toISOString().slice(0,10);
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var err = document.getElementById('err'); err.textContent = '';
+    var f = form.elements;
+    var phone = (f.whatsappNumber.value || '').replace(/\D/g, '');
+    if (!chosen) { err.textContent = 'فضلاً اختر الباقة أولاً'; document.querySelector('.pkgs').scrollIntoView({behavior:'smooth'}); return; }
+    if (!f.customerName.value.trim() || !f.city.value || !f.district.value.trim() || !f.pickupAddress.value.trim() || !f.pickupDate.value || !f.pickupTime.value) { err.textContent = 'فضلاً عبّي كل الحقول المطلوبة'; return; }
+    if (!(/^05\d{8}$/.test(phone) || /^9665\d{8}$/.test(phone))) { err.textContent = 'رقم الجوال غير صحيح – مثال: 05XXXXXXXX'; return; }
+    var btn = document.getElementById('submit'); btn.disabled = true; btn.textContent = 'جاري الإرسال...';
+    var payload = {
+      customerName: f.customerName.value.trim(), whatsappNumber: phone,
+      packageId: chosen.id, packageName: chosen.name, price: chosen.price,
+      pickupAddress: f.pickupAddress.value.trim(), pickupArea: f.district.value.trim() + '، ' + f.city.value,
+      pickupDate: f.pickupDate.value, pickupTime: f.pickupTime.value,
+      notes: (f.notes.value.trim() ? f.notes.value.trim() + ' | ' : '') + 'من صفحة الحجز book.html',
+      lang: 'ar',
+      utm_source: qs.get('utm_source'), utm_medium: qs.get('utm_medium'), utm_campaign: qs.get('utm_campaign'),
+      utm_term: qs.get('utm_term'), utm_content: qs.get('utm_content'), sc_click_id: qs.get('ScCid') || qs.get('sccid')
+    };
+    fetch('/api/orders', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function(r){ return r.json().then(function(j){ return { ok: r.ok, j: j }; }); })
+      .then(function(res){
+        if (!res.ok) throw new Error((res.j && res.j.error) || 'error');
+        document.getElementById('oid').textContent = res.j.orderId || '';
+        form.style.display = 'none';
+        var done = document.getElementById('done'); done.style.display = 'block';
+        done.scrollIntoView({behavior:'smooth', block:'center'});
+        snap('SIGN_UP', { price: chosen.price, currency: 'SAR', transaction_id: res.j.orderId });
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'احجز الاستلام الآن';
+        err.innerHTML = 'صار خطأ بالإرسال، حاول مرة ثانية أو اتصل على <a href="tel:+966572065269" dir="ltr">0572065269</a>';
+      });
+  });
+</script>
+</body>
+</html>
