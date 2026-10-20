@@ -16,7 +16,7 @@ declare global {
 
 // Not a secret — Snap Pixel IDs are meant to appear in page source. Kept
 // overridable via env var in case a second pixel is ever needed.
-const PIXEL_ID = process.env.NEXT_PUBLIC_SNAP_PIXEL_ID || '8b94037b-81c2-46e4-b420-56411c17d9e8';
+const PIXEL_ID = process.env.NEXT_PUBLIC_SNAP_PIXEL_ID || 'ccab277d-8565-431e-9746-15ca10787fec';
 
 const ATTRIBUTION_KEY = 'ccl_attribution';
 
